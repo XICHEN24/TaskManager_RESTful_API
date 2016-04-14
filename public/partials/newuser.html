@@ -1,0 +1,12 @@
+<div class="list" ng-controller='UserListController'>	
+	<div class="title"><h3>Add User</h3></div>
+  	<div class="title">our next task-slayer</div>
+	<form >	
+		Name:<span class="required">&nbsp;*</span>
+		<input class="input" type="text" ng-model="name" required>
+		Email:<span class="required">&nbsp;*</span>
+		<input class="email" type="email" ng-model="email">
+		<button type="submit" ng-click="sendPost()" class="button tiny info">Send</button>
+	</form>
+	<div class = "alertmsg"><h5>{{successmessage}}</h5><div>
+</div>

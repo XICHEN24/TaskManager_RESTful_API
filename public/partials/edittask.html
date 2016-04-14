@@ -1,0 +1,44 @@
+<div class="list" ng-controller='TaskDetailController'>	
+	<div class="title"><h3>Edit Task</h3></div>
+  	<div class="title">staying occupied</div>
+	
+	<form >	
+		Name:<span class="required">*</span>
+		<input class="input" type="text" ng-model="taskname" required>
+		Description:
+		<input class="input" type="text" ng-model="description">
+		Deadline:<span class="required">*</span>
+		<div>
+			<datepicker>
+	  			<input ng-model="date" type="text"/ required>
+			</datepicker>
+		</div>
+		Assigned User: <!--<input class="input" type="text" ng-model="assignedUserName">-->
+		<div>
+			<select ng-model="assignedUserName" >
+				<option ng-repeat="i in user| unique:'name'">{{i.name}}</option>
+			</select>
+		</div>
+		<form ng-model="choice">
+		<label>
+		  <input type="radio" name="response" ng-model="choice" ng-value="true" />
+		  Completed
+		</label>
+		<label>
+		<input type="radio" name="response" ng-model="choice" ng-value="false" />
+		  Pending
+		</label>
+		</form>
+	<!--
+		<label data-ng-repeat="choice in choices">
+		  <input type="radio" name="response" data-ng-model="choice.isUserAnswer" data-ng-value="true" />
+		  {{choice.text}}
+		</label>
+	-->
+		<button type="submit" ng-click="editTask()" class="button tiny info">Edit</button>
+		<div class="alertmsg">{{editmsg}}:
+			{{message}}
+		</div>
+	</form>
+  </div>	
+</div>

@@ -1,0 +1,100 @@
+
+<div class="list" ng-controller='UserListController'>	
+	<div class="title"><h3>Tasks</h3></div>
+  	<div class="title">really important stuff</div>
+  	<div>
+		<div class="taskoption">
+			<!--
+			<a class="secondary button  tiny button" ng-click="setoption={completed: false}">Pending</a>
+			<a class="secondary button  tiny button" ng-click="setoption={completed: true}">Completed</a>
+			<a class="secondary button  tiny button" ng-click="setoption=none">All</a>
+			--> 
+			<a class="secondary button  small button" ng-click="set(0)">Pending</a>
+			<a class="secondary button  small button" ng-click="set(1)">Completed</a>
+			<a class="secondary button  small button" ng-click="set(2)">All</a>
+		</div>
+		<!--
+		<div class="orderoption">
+			<a class="secondary button" ng-click="order='dateCreated'">dateCreated</a>
+			<a class="secondary button" ng-click="order='deadline'">deadline</a>
+			<a class="secondary button" ng-click="order='name'">name</a>
+			<a class="secondary button" ng-click="order='assignedUserName'">assignedUserName</a>
+		</div>
+	--> <div class="taskoption">
+			<select ng-model="order">
+				<option value = "dateCreated">dateCreated</option>
+				<option value = "deadline">deadline</option>
+				<option value = "name">name</option>
+				<option value = "assignedUserName">assignedUserName</option>
+			</select>
+		</div>
+		
+		<!--
+		<div>
+			<a class="warning button tiny button" ng-click="change(0)">ascending</a>
+			<a class="warning button tiny button" ng-click="change(1)">descending</a>
+		</div>
+	-->	<div class="taskoption">
+			<label>
+				Ascending<input type='radio' ng-model="q" checked/>
+				Descending<input type='radio' ng-model="q" value=reverse />
+			</label>
+		</div>
+	</div>
+	{{msg}}
+	<table>
+		<tr>
+			<th>{{putmsg}}</th>
+			<th>{{deletemsg}}</th>
+			<th><button class="hollow button"><a href="#/newtask">add task</a></button></th>
+		</tr>
+	</table>
+
+	<table>
+		<tr ng-repeat="i in task|orderBy:order:q|startFrom:Page*Size|limitTo:Size">
+			<td><a href="#/taskdetail/{{i._id}}">{{i.name}}</a></td>
+			<td>{{i.assignedUserName}}</td>
+			<td>{{i.deadline}}</td>
+			<td><button type="submit" ng-click="deletetask(i._id)" class="alert button tiny button">delete</button></td>
+		</tr>
+	</table>
+	<button ng-disabled="Page == 0" ng-click="Page=Page-1" class="button tiny info">
+        Previous
+    </button>
+    <!--{{Page+1}}/{{num()}}-->
+    <button ng-disabled="Page >= task.length/Size - 1" ng-click="Page=Page+1" class="button tiny info">
+        Next
+    </button>
+<!--
+	<ul>
+       <li ng-repeat="i in filtered=(tasks|filter: setoption|orderBy:order:q)|startFrom:Page*Size|limitTo:Size" > 
+        <li ng-repeat="i in task|orderBy:order:q|startFrom:Page*Size|limitTo:Size" >
+            <a href="#/taskdetail/{{i._id}}">{{i.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.assignedUserName}}&nbsp;&nbsp;&nbsp;<span class="deadline">{{i.deadline}}</span>
+            <button type="submit" ng-click="deletetask(i._id)" class="button tiny info">delete</button>	
+        </li>
+    </ul>
+
+    <button ng-disabled="Page == 0" ng-click="Page=Page-1" class="button tiny info">
+        Previous
+    </button>
+   
+    <button ng-disabled="Page >= task.length/Size - 1" ng-click="Page=Page+1" class="button tiny info">
+        Next
+    </button>
+    -->
+<!--
+	(tasks|filter: setoption)
+		<ul>
+			<li >
+				<h4 ng-repeat="i in tasks.data|filter: setoption|orderBy:order:q">			
+			
+						<a href="#/taskdetail/{{i._id}}">{{i.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.assignedUserName}}&nbsp;&nbsp;&nbsp;<span class="deadline">{{i.deadline}}</span>
+						<button type="submit" ng-click="deletetask(i._id)" class="button tiny info">delete</button>	
+
+				
+				</h4>
+			</li>
+		</ul>
+-->	
+</div>
+

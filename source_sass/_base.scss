@@ -1,1 +1,47 @@
 // Add any custom Sass & CSS here
+.titlebkg{
+	background-color: #E0E0E0;
+}
+h2{
+	text-align:center;
+}
+.list{
+	padding-top:30px;
+	padding-left:60px;
+	padding-right:60px;
+	.userlistbtn{
+		//position: 
+	}
+	.required{
+		color:red;
+	}
+	.alertmsg{
+		color:red;
+	}
+	.taskoption{
+		padding-left: 100px;
+		padding-right:100px;
+		padding-top:10px;
+		padding-bottom:10px;
+		margin:0px;
+		display:inline-block;
+	}
+
+}
+.title{
+	display: inline-block;
+}
+.taskname{
+	color:red;
+}
+.deadline{
+	color: blue;
+}
+.task{
+	width:80%;
+	text-align:center;
+	padding:30px;
+	.required{
+		color:red;
+	}
+}

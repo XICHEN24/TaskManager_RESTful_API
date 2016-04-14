@@ -1,0 +1,18 @@
+<div class="list" ng-controller='TaskDetailController'>
+	<div class="title"><h3>Task</h3></div>
+  	<div class="title">gotta get this done</div>
+	
+	<div><button class="success button"><a href="#/taskdetail/{{task._id}}/edittask">Edit Task</a></button></div>
+	<!--{{task._id}}-->
+	<table>
+		<tr>
+			<td><strong>{{task.name}}</strong></td>
+			<td><strong>Deadline: {{task.deadline}}</strong></td>
+		</tr>
+		<tr>
+			<td>Completed: {{task.completed}}</td>
+			<td>Assigned to: {{task.assignedUserName}}</td>
+		</tr>
+	</table>
+</div>	
+

@@ -1,0 +1,27 @@
+<div class="list" ng-controller='TaskListController'>
+  <div class="title"><h3>Add Task</h3></div>
+  <div class="title">staying occupied</div>	
+  <div class="innertask">
+	<form >	
+		Name:<span class="required">*</span>
+		<input class="input" type="text" ng-model="taskname" required>
+		Description:
+		<input class="input" type="text" ng-model="description">
+		Deadline:<span class="required">*</span>
+		<div>
+		<datepicker>
+  			<input ng-model="date" type="text"/ required>
+		</datepicker>
+		</div>
+		Assigned User: 
+		<div>
+			<select ng-model="assignedUserName" >
+				<option ng-repeat="i in users| unique:'name'">{{i.name}}</option>
+			</select>
+		</div>
+		<button type="submit" ng-click="sendTask()" class="button tiny info">Send</button>
+
+		<div>{{message}}</div>
+	</form>
+  </div>	
+</div>

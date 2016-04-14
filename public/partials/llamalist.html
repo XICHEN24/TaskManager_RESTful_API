@@ -1,7 +1,26 @@
-<div class="list" ng-controller='LlamaListController'>		
+<div class="list" ng-controller='UserListController'>	
+	<div class="title"><h3>Users</h3></div>
+  	<div class="title">a list of cool people</div>	
+	<table>
+		<tr>
+			<td></td>
+			<td><strong>{{deletemessage}} {{putmessage}}</strong></td>
+			<td><button class="hollow button small button" id="userlistbtn"><a href="#/newuser">add user</a></button></td>
+		</tr>
+		<tr ng-repeat="i in users">
+			<td><a href="#/userdetail/{{i._id}}">{{i.name}}</a></td>
+			<td>{{i.email}}</td>
+			<td><button type="submit" ng-click="deleteuser(i._id)" class="alert button tiny button">delete</button></td>
+		</tr>
+	</table>
+	<!--
 	<ul>
-		<li ng-repeat="llama in llamas">
-			<h3>{{llama.name}}</h3>
+		<li >
+			<h3 ng-repeat="i in users">
+				<a href="#/userdetail/{{i._id}}">{{i.name}}</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{i.email}}
+				<button type="submit" ng-click="deleteuser(i._id)" class="button tiny info">delete</button>
+			</h3>
 		</li>
 	</ul>
+-->
 </div>

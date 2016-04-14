@@ -1,0 +1,35 @@
+<div class="list" ng-controller='UserDetailController'>
+	<div class="title"><h3>User Profile</h3></div>
+  	<div class="title">just like on Facebook but better</div>
+  	<table>
+		<tr>
+			<td><strong>{{user.name}}</strong></td>
+			<td><strong>{{user.email}}</strong></td>
+			<td><strong>{{putmessage}}</strong></td>
+		</tr>
+	</table>
+	<h4>Pending Tasks</h4>
+	<table>
+		<tr ng-repeat="i in list">
+			<td><a href="#/taskdetail/{{i._id}}">{{i.name}}</a></td>
+			<td>deadline:{{i.deadline}}</td>
+			<td><button class="alert button tiny button" ng-click = "changeComplete(i._id)">Completed</button></td>
+		</tr>
+	</table>
+	<button class="success button" ng-click = "showTask()">Show completed task</button>
+	<table>
+		<tr ng-show="temp==true"ng-repeat="i in listcp">
+			<td><a href="#/taskdetail/{{i._id}}">{{i.name}}</a></td>
+			<td>deadline:{{i.deadline}}</td>
+			<td>completed: {{i.completed}}</td>
+		</tr>
+	</table>
+<!--
+	<h3 ng-show="temp==true"ng-repeat="i in listcp">{{i.name}}&nbsp;&nbsp;&nbsp;&nbsp;{{i.deadline}} {{i.completed}}
+
+	{{error}}
+
+	{{i.completed}}
+	
+	-->
+</div>	
