@@ -1,19 +1,5 @@
-# Starter files for MP4
+# Awesome Task Manager
 
-## Setup
-Use the following commands in your vagrant development environment to get this up and running
-```
-git clone https://github.com/uiuc-web-programming/mp4_client_starter.git
-cd mp4_client_starter
-npm install
-bower install
-grunt compass
-grunt uglify
-grunt
-```
-
-You can leave this command running in the background while development for livereloading:
-
-```bash
-grunt
-```
+http://uiucwp.com/mp_submissions/mp4/BWI9G9/frontend/public/index.html#/settings
+This a task manager web-based application, which favors users to record and track personal tasks.
+Build with Node, Express and Mongo. The front-end task manager application using Angular that consumes the API.
